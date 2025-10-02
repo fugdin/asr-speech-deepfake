@@ -1,0 +1,39 @@
+﻿dataset:
+  name: custom
+  root_dir: data/raw/vivos
+  processed_dir: data/processed/vivos_custom
+  download_kwargs: {}
+  prepare_kwargs:
+    manifests:
+      train: data/manifests/vivos/train.jsonl
+      eval: data/manifests/vivos/test.jsonl
+    audio_column: audio_filepath
+    text_column: text
+    speaker_column: speaker_id
+    target_sample_rate: 16000
+    normalize_transcripts: true
+    num_workers: 4
+
+model:
+  architecture: whisper
+  pretrained_name: openai/whisper-small
+  language: vi
+  task: transcribe
+  freeze_encoder: false
+  gradient_checkpointing: true
+
+training:
+  output_dir: runs/whisper-small-vivos
+  num_train_epochs: 10
+  learning_rate: 1e-5
+  warmup_ratio: 0.1
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 2
+  fp16: true
+  seed: 42
+
+evaluation:
+  compute_wer: true
+  decoding_strategy: greedy
+  num_beams: 1

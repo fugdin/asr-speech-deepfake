@@ -205,3 +205,31 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Datasets & outputs
+data/raw/
+data/interim/
+data/processed/
+runs/
+checkpoints/
+logs/
+*.ckpt
+*.pt
+*.bin
+*.wav
+*.flac
+*.mp3
+*.zip
+*.tar*
+*.7z
+
+# Virtual env
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# Node (nếu có frontend)
+frontend/node_modules/
+*.log

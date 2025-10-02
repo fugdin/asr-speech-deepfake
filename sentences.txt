@@ -1,0 +1,3 @@
+﻿Xin chào, đây là ví dụ dữ liệu tổng hợp.
+Chúng ta đang thử nghiệm hệ thống nhận dạng giọng nói.
+Hãy ghi âm nhiều câu đa dạng để mô hình học tốt hơn.
